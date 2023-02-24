@@ -41,8 +41,7 @@ for i in range(num_frames):
     
     # set the camera's location and rotation
     bpy.context.scene.camera.location = camera_position
-    #bpy.context.scene.camera.rotation_euler = direction.to_track_quat('-Z', 'Y').to_euler()
-    cam.angle = cam.angle + (math.pi/(2*num_frames))
+    bpy.context.scene.camera.rotation_euler = direction.to_track_quat('-Z', 'Y').to_euler()
      
     # insert a keyframe for the camera's location and rotation
     bpy.context.scene.camera.keyframe_insert(data_path='location', frame=i)
